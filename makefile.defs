@@ -1,0 +1,22 @@
+# File: makefile.defs.mingw32
+
+# System: MinGW
+# Feng WenJie, 3 October 2012
+
+CC = D:/mingw/bin/gcc -std=gnu99 -isystem D:/mingw/include
+
+CXX = D:/mingw/bin/g++ -isystem D:/mingw/include/c++/4.7.0 -isystem D:/mingw/include -Wshadow
+
+CFLAGS = -DWINVER=0x0500 -D_WIN32_WINNT=0x0500 -D_WIN32_IE=0x0500 -DUNICODE -Dmain=wingwmain -O2
+
+CXXFLAGS = $(CFLAGS)
+
+LINK = D:/mingw/bin/g++
+
+EXECUTABLE = Morphing.exe
+
+LIBS = -L/mingw32/lib -Ld:/morphing -lwinmm -lwsock32 -lcomctl32 -lole32 -lgdi32 -lgdiplus -lcomdlg32 -static-libgcc -static-libstdc++ -mwindows
+
+AR = D:/mingw/bin/ar
+RANLIB = D:/mingw/bin/ranlib
+WINDRES = D:/mingw/bin/windres
